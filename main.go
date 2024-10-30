@@ -42,6 +42,8 @@ func generateHooksConfig(services map[string]hook) string {
 	sort.Strings(keys)
 
 	for _, k := range keys {
+		fmt.Printf("- %s\n", k)
+
 		// set vars
 		id := k
 		name := strings.ReplaceAll(k, "-", " ")
