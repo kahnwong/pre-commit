@@ -2,70 +2,90 @@
 - id: cargo-check
   name: 'cargo check'
   entry: ./hooks/cargo-check.sh
-  files: '^Cargo'
+  types: [rust]
+  files: ''
   language: 'script'
 - id: cargo-clippy
   name: 'cargo clippy'
   entry: ./hooks/cargo-clippy.sh
-  files: '\.rs$'
+  types: [rust]
+  files: ''
   language: 'script'
 - id: go-build
   name: 'go build'
   entry: ./hooks/go-build.sh
-  files: '\.go$'
+  types: [go]
+  files: ''
   language: 'script'
 - id: go-fmt
   name: 'go fmt'
   entry: ./hooks/go-fmt.sh
-  files: '\.go$'
+  types: [go]
+  files: ''
   language: 'script'
 - id: go-imports
   name: 'go imports'
   entry: ./hooks/go-imports.sh
-  files: '\.go$'
+  types: [go]
+  files: ''
   language: 'script'
 - id: go-mod-tidy
   name: 'go mod tidy'
   entry: ./hooks/go-mod-tidy.sh
-  files: '\.mod'
+  types: [go]
+  files: ''
   language: 'script'
 - id: go-unit-tests
   name: 'go unit tests'
   entry: ./hooks/go-unit-tests.sh
-  files: '\.go$'
+  types: [go]
+  files: ''
   language: 'script'
 - id: go-vet
   name: 'go vet'
   entry: ./hooks/go-vet.sh
-  files: '\.go$'
+  types: [go]
+  files: ''
   language: 'script'
 - id: golangci-lint
   name: 'golangci lint'
   entry: ./hooks/golangci-lint.sh
-  files: '\.go$'
+  types: [go]
+  files: ''
+  language: 'script'
+- id: hadolint
+  name: 'hadolint'
+  entry: ./hooks/hadolint.sh
+  types: [dockerfile]
+  files: ''
   language: 'script'
 - id: nix-fmt
   name: 'nix fmt'
   entry: ./hooks/nix-fmt.sh
-  files: ''
+  types: []
+  files: '\.nix$'
   language: 'script'
 - id: rust-fmt
   name: 'rust fmt'
   entry: ./hooks/rust-fmt.sh
-  files: '\.rs$'
+  types: [rust]
+  files: ''
   language: 'script'
 - id: shellcheck
   name: 'shellcheck'
   entry: ./hooks/shellcheck.sh
+  types: []
   files: '\.sh$'
   language: 'script'
 - id: shfmt
   name: 'shfmt'
   entry: ./hooks/shfmt.sh
+  types: []
   files: '\.sh$'
   language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh
+  types: [ts]
   files: ''
   language: 'script'

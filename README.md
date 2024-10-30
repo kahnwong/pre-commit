@@ -21,6 +21,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
     - id: cargo-check
     - id: cargo-clippy
     # -- ops -- #
+    - id: hadolint
     - id: shellcheck
     - id: shfmt
     # -- misc -- #
@@ -31,3 +32,4 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
 ## Refs
 
 - <https://github.com/dnephin/pre-commit-golang>
+- <https://pre-commit.com/#plugins>

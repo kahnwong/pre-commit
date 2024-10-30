@@ -9,6 +9,7 @@ import (
 )
 
 type hook struct {
+	Type       string
 	Files      string
 	Executable string
 	Command    string
@@ -72,9 +73,10 @@ fi
 		config += fmt.Sprintf(`- id: %s
   name: '%s'
   entry: ./hooks/%s.sh
+  types: [%s]
   files: '%s'
   language: 'script'
-`, id, name, id, services[k].Files)
+`, id, name, id, services[k].Type, services[k].Files)
 	}
 
 	return config
