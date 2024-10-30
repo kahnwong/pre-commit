@@ -59,6 +59,11 @@
   entry: ./hooks/shellcheck.sh
   files: '\.sh$'
   language: 'script'
+- id: shfmt
+  name: 'shfmt'
+  entry: ./hooks/shfmt.sh
+  files: '\.sh$'
+  language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh

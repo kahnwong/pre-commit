@@ -69,6 +69,11 @@ func opsHooksManifest() map[string]hook {
 			Executable: "shellcheck",
 			Command:    "shellcheck \"$@\"",
 		},
+		"shfmt": {
+			Files:      "\\.sh$",
+			Executable: "shfmt",
+			Command:    "shfmt -w \"$@\"",
+		},
 	}
 }
 

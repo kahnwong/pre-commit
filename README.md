@@ -22,6 +22,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
     - id: cargo-clippy
     # -- ops -- #
     - id: shellcheck
+    - id: shfmt
     # -- misc -- #
     - id: nix-fmt
     - id: yarn-prettier
