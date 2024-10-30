@@ -1,4 +1,9 @@
 ---
+- id: cargo-check
+  name: 'cargo check'
+  entry: ./hooks/cargo-check.sh
+  files: '^Cargo'
+  language: 'script'
 - id: go-build
   name: 'go build'
   entry: ./hooks/go-build.sh

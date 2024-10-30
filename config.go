@@ -49,6 +49,11 @@ func rustHooksManifest() map[string]hook {
 			Executable: "cargo",
 			Command:    "cargo fmt",
 		},
+		"cargo-check": {
+			Files:      "^Cargo",
+			Executable: "cargo",
+			Command:    "cargo check",
+		},
 	}
 
 	return hooks
