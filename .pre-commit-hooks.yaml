@@ -4,6 +4,11 @@
   entry: ./hooks/cargo-check.sh
   files: '^Cargo'
   language: 'script'
+- id: cargo-clippy
+  name: 'cargo clippy'
+  entry: ./hooks/cargo-clippy.sh
+  files: '\.rs$'
+  language: 'script'
 - id: go-build
   name: 'go build'
   entry: ./hooks/go-build.sh

@@ -54,6 +54,11 @@ func rustHooksManifest() map[string]hook {
 			Executable: "cargo",
 			Command:    "cargo check",
 		},
+		"cargo-clippy": {
+			Files:      "\\.rs$",
+			Executable: "cargo",
+			Command:    "cargo clippy -- -D warnings",
+		},
 	}
 
 	return hooks
