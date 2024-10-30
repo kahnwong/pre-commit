@@ -16,12 +16,13 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
     - id: go-unit-tests
     - id: go-vet
     - id: golangci-lint
-    # -- node -- #
-    - id: yarn-prettier
     # -- rust -- #
     - id: rust-fmt
     - id: cargo-check
     - id: cargo-clippy
+    # -- misc -- #
+    - id: nix-fmt
+    - id: yarn-prettier
 ```
 
 ## Refs

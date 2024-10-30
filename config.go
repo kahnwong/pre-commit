@@ -40,15 +40,6 @@ func goHooksManifest() map[string]hook {
 	}
 }
 
-func nodeHooksManifest() map[string]hook {
-	return map[string]hook{
-		"yarn-prettier": {
-			Executable: "yarn",
-			Command:    "yarn prettier . --write",
-		},
-	}
-}
-
 func rustHooksManifest() map[string]hook {
 	return map[string]hook{
 		"rust-fmt": {
@@ -65,6 +56,19 @@ func rustHooksManifest() map[string]hook {
 			Files:      "\\.rs$",
 			Executable: "cargo",
 			Command:    "cargo clippy -- -D warnings",
+		},
+	}
+}
+
+func miscHooksManifest() map[string]hook {
+	return map[string]hook{
+		"yarn-prettier": {
+			Executable: "yarn",
+			Command:    "yarn prettier . --write",
+		},
+		"nix-fmt": {
+			Executable: "nixfmt",
+			Command:    "nixfmt \"$@\"",
 		},
 	}
 }
