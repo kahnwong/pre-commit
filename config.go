@@ -1,7 +1,7 @@
 package main
 
 func goHooksManifest() map[string]hook {
-	hooks := map[string]hook{
+	return map[string]hook{
 		"go-fmt": {
 			Files:      "\\.go$",
 			Executable: "gofmt",
@@ -38,12 +38,19 @@ func goHooksManifest() map[string]hook {
 			Command:    "go mod tidy -v \"$@\"",
 		},
 	}
+}
 
-	return hooks
+func nodeHooksManifest() map[string]hook {
+	return map[string]hook{
+		"yarn-prettier": {
+			Executable: "yarn",
+			Command:    "yarn prettier . --write",
+		},
+	}
 }
 
 func rustHooksManifest() map[string]hook {
-	hooks := map[string]hook{
+	return map[string]hook{
 		"rust-fmt": {
 			Files:      "\\.rs$",
 			Executable: "cargo",
@@ -60,6 +67,4 @@ func rustHooksManifest() map[string]hook {
 			Command:    "cargo clippy -- -D warnings",
 		},
 	}
-
-	return hooks
 }

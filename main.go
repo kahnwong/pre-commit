@@ -17,8 +17,10 @@ type hook struct {
 func main() {
 	hooks := map[string]hook{}
 	goHooks := goHooksManifest()
+	nodeHooks := nodeHooksManifest()
 	rustHooks := rustHooksManifest()
 	maps.Insert(hooks, maps.All(goHooks))
+	maps.Insert(hooks, maps.All(nodeHooks))
 	maps.Insert(hooks, maps.All(rustHooks))
 
 	// generate config

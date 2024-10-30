@@ -49,3 +49,8 @@
   entry: ./hooks/rust-fmt.sh
   files: '\.rs$'
   language: 'script'
+- id: yarn-prettier
+  name: 'yarn prettier'
+  entry: ./hooks/yarn-prettier.sh
+  files: ''
+  language: 'script'
