@@ -1,0 +1,6 @@
+---
+- id: go-fmt
+  name: 'go fmt'
+  entry: ./go/go-fmt.sh
+  files: '\.go$'
+  language: 'script'
