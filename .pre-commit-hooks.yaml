@@ -1,11 +1,11 @@
 ---
 - id: go-fmt
   name: 'go fmt'
-  entry: ./go/go-fmt.sh
+  entry: ./hooks/go-fmt.sh
   files: '\.go$'
   language: 'script'
 - id: go-imports
   name: 'go imports'
-  entry: ./go/go-imports.sh
+  entry: ./hooks/go-imports.sh
   files: '\.go$'
   language: 'script'
