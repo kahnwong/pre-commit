@@ -22,6 +22,11 @@ func hooksManifest() map[string]hook {
 			Executable: "golangci-lint",
 			Command:    "golangci-lint run \"$@\"",
 		},
+		"go-unit-tests": {
+			Files:      "\\.go$",
+			Executable: "go",
+			Command:    "go test ./...",
+		},
 	}
 
 	return hooks
