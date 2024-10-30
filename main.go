@@ -54,16 +54,12 @@ func generateHooksConfig(services map[string]hook) string {
 		// create hook
 		hookScript := fmt.Sprintf(`#!/bin/bash
 
-set -e -o pipefail
-
 if ! command -v %s &>/dev/null; then
 	echo "%s not installed or available in the PATH" >&2
 	exit 1
 fi
 
-output="$(%s)"
-echo "$output"
-[[ -z "$output" ]]
+%s
 `, executable, executable, services[k].Command)
 		err := os.WriteFile(fmt.Sprintf("./hooks/%s.sh", k), []byte(hookScript), 0775)
 		if err != nil {
