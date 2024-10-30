@@ -14,6 +14,11 @@
   entry: ./hooks/go-imports.sh
   files: '\.go$'
   language: 'script'
+- id: go-mod-tidy
+  name: 'go mod tidy'
+  entry: ./hooks/go-mod-tidy.sh
+  files: '\.go$'
+  language: 'script'
 - id: go-unit-tests
   name: 'go unit tests'
   entry: ./hooks/go-unit-tests.sh
