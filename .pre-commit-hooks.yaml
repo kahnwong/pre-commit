@@ -34,3 +34,8 @@
   entry: ./hooks/golangci-lint.sh
   files: '\.go$'
   language: 'script'
+- id: rust-fmt
+  name: 'rust fmt'
+  entry: ./hooks/rust-fmt.sh
+  files: '\.rs$'
+  language: 'script'

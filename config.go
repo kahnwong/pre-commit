@@ -1,6 +1,6 @@
 package main
 
-func hooksManifest() map[string]hook {
+func goHooksManifest() map[string]hook {
 	hooks := map[string]hook{
 		"go-fmt": {
 			Files:      "\\.go$",
@@ -36,6 +36,18 @@ func hooksManifest() map[string]hook {
 			Files:      "\\.mod",
 			Executable: "go",
 			Command:    "go mod tidy -v \"$@\"",
+		},
+	}
+
+	return hooks
+}
+
+func rustHooksManifest() map[string]hook {
+	hooks := map[string]hook{
+		"rust-fmt": {
+			Files:      "\\.rs$",
+			Executable: "cargo",
+			Command:    "cargo fmt",
 		},
 	}
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"maps"
 	"os"
 	"sort"
 	"strings"
@@ -14,7 +15,11 @@ type hook struct {
 }
 
 func main() {
-	hooks := hooksManifest()
+	hooks := map[string]hook{}
+	goHooks := goHooksManifest()
+	rustHooks := rustHooksManifest()
+	maps.Insert(hooks, maps.All(goHooks))
+	maps.Insert(hooks, maps.All(rustHooks))
 
 	// generate config
 	createDir("hooks")
