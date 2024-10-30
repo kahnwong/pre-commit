@@ -1,4 +1,9 @@
 ---
+- id: go-build
+  name: 'go build'
+  entry: ./hooks/go-build.sh
+  files: '\.go$'
+  language: 'script'
 - id: go-fmt
   name: 'go fmt'
   entry: ./hooks/go-fmt.sh
