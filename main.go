@@ -18,9 +18,11 @@ func main() {
 	hooks := map[string]hook{}
 	goHooks := goHooksManifest()
 	rustHooks := rustHooksManifest()
+	opsHooks := opsHooksManifest()
 	miscHooks := miscHooksManifest()
 	maps.Insert(hooks, maps.All(goHooks))
 	maps.Insert(hooks, maps.All(rustHooks))
+	maps.Insert(hooks, maps.All(opsHooks))
 	maps.Insert(hooks, maps.All(miscHooks))
 
 	// generate config

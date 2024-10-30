@@ -20,6 +20,8 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
     - id: rust-fmt
     - id: cargo-check
     - id: cargo-clippy
+    # -- ops -- #
+    - id: shellcheck
     # -- misc -- #
     - id: nix-fmt
     - id: yarn-prettier

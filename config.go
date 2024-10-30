@@ -1,5 +1,6 @@
 package main
 
+// toolchains
 func goHooksManifest() map[string]hook {
 	return map[string]hook{
 		"go-fmt": {
@@ -56,6 +57,17 @@ func rustHooksManifest() map[string]hook {
 			Files:      "\\.rs$",
 			Executable: "cargo",
 			Command:    "cargo clippy -- -D warnings",
+		},
+	}
+}
+
+// misc
+func opsHooksManifest() map[string]hook {
+	return map[string]hook{
+		"shellcheck": {
+			Files:      "\\.sh$",
+			Executable: "shellcheck",
+			Command:    "shellcheck \"$@\"",
 		},
 	}
 }

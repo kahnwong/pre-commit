@@ -54,6 +54,11 @@
   entry: ./hooks/rust-fmt.sh
   files: '\.rs$'
   language: 'script'
+- id: shellcheck
+  name: 'shellcheck'
+  entry: ./hooks/shellcheck.sh
+  files: '\.sh$'
+  language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh
