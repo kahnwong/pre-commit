@@ -9,3 +9,8 @@
   entry: ./hooks/go-imports.sh
   files: '\.go$'
   language: 'script'
+- id: go-vet
+  name: 'go vet'
+  entry: ./hooks/go-vet.sh
+  files: '\.go$'
+  language: 'script'

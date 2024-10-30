@@ -37,3 +37,10 @@ repos:
       - id: golangci-lint
       - id: go-build
       - id: go-mod-tidy
+  # ----------------------- MAIN -----------------------
+  - repo: local
+    hooks:
+      - id: generate-config
+        name: generate config
+        entry: go run .
+        language: system
