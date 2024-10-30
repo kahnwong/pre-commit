@@ -7,6 +7,6 @@ if ! command -v go &>/dev/null; then
 	exit 1
 fi
 
-output="$(go vet "$@")"
+output="$(go vet)"
 echo "$output"
 [[ -z "$output" ]]

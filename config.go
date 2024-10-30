@@ -15,7 +15,7 @@ func hooksManifest() map[string]hook {
 		"go-vet": {
 			Files:      "\\.go$",
 			Executable: "go",
-			Command:    "go vet \"$@\"",
+			Command:    "go vet",
 		},
 		"golangci-lint": {
 			Files:      "\\.go$",
