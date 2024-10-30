@@ -4,3 +4,8 @@
   entry: ./go/go-fmt.sh
   files: '\.go$'
   language: 'script'
+- id: go-imports
+  name: 'go imports'
+  entry: ./go/go-imports.sh
+  files: '\.go$'
+  language: 'script'
