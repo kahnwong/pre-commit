@@ -14,3 +14,8 @@
   entry: ./hooks/go-vet.sh
   files: '\.go$'
   language: 'script'
+- id: golangci-lint
+  name: 'golangci lint'
+  entry: ./hooks/golangci-lint.sh
+  files: '\.go$'
+  language: 'script'

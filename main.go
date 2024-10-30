@@ -14,23 +14,7 @@ type hook struct {
 }
 
 func main() {
-	hooks := map[string]hook{
-		"go-fmt": {
-			Files:      "\\.go$",
-			Executable: "gofmt",
-			Command:    "gofmt -l -w \"$@\"",
-		},
-		"go-imports": {
-			Files:      "\\.go$",
-			Executable: "goimports",
-			Command:    "goimports -l -w \"$@\"",
-		},
-		"go-vet": {
-			Files:      "\\.go$",
-			Executable: "go",
-			Command:    "go vet \"$@\"",
-		},
-	}
+	hooks := hooksManifest()
 
 	// generate config
 	createDir("hooks")
