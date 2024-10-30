@@ -7,6 +7,6 @@ if ! command -v go &>/dev/null; then
 	exit 1
 fi
 
-output="$(go mod tidy)"
+output="$(go mod tidy -v "$@")"
 echo "$output"
 [[ -z "$output" ]]

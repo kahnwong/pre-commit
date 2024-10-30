@@ -33,9 +33,9 @@ func hooksManifest() map[string]hook {
 			Command:    "go build",
 		},
 		"go-mod-tidy": {
-			Files:      "\\.go$",
+			Files:      "\\.mod",
 			Executable: "go",
-			Command:    "go mod tidy",
+			Command:    "go mod tidy -v \"$@\"",
 		},
 	}
 

@@ -17,7 +17,7 @@
 - id: go-mod-tidy
   name: 'go mod tidy'
   entry: ./hooks/go-mod-tidy.sh
-  files: '\.go$'
+  files: '\.mod'
   language: 'script'
 - id: go-unit-tests
   name: 'go unit tests'
