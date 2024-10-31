@@ -17,14 +17,16 @@ type hook struct {
 
 func main() {
 	hooks := map[string]hook{}
-	goHooks := goHooksManifest()
-	rustHooks := rustHooksManifest()
-	opsHooks := opsHooksManifest()
-	miscHooks := miscHooksManifest()
-	maps.Insert(hooks, maps.All(goHooks))
-	maps.Insert(hooks, maps.All(rustHooks))
-	maps.Insert(hooks, maps.All(opsHooks))
-	maps.Insert(hooks, maps.All(miscHooks))
+	hooksManifest := []map[string]hook{
+		goHooksManifest(),
+		rustHooksManifest(),
+		terraformHooksManifest(),
+		opsHooksManifest(),
+		miscHooksManifest(),
+	}
+	for _, i := range hooksManifest {
+		maps.Insert(hooks, maps.All(i))
+	}
 
 	// generate config
 	createDir("hooks")
@@ -52,7 +54,7 @@ func generateHooksConfig(services map[string]hook) string {
 		// set vars
 		id := k
 		name := strings.ReplaceAll(k, "-", " ")
-		executable := strings.Split(services[k].Command, " ")[0]
+		executable := services[k].Executable
 
 		// create hook
 		hookScript := fmt.Sprintf(`#!/bin/bash

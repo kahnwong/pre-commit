@@ -83,6 +83,12 @@
   types: []
   files: '\.sh$'
   language: 'script'
+- id: terraform-fmt
+  name: 'terraform fmt'
+  entry: ./hooks/terraform-fmt.sh
+  types: []
+  files: '(\.tf|\.tfvars)$'
+  language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh

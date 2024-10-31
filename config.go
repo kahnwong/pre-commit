@@ -61,6 +61,16 @@ func rustHooksManifest() map[string]hook {
 	}
 }
 
+func terraformHooksManifest() map[string]hook {
+	return map[string]hook{
+		"terraform-fmt": {
+			Files:      "(\\.tf|\\.tfvars)$",
+			Executable: "terraform",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' -printf '%h\\n' | sort -u | xargs terraform fmt",
+		},
+	}
+}
+
 // misc
 func opsHooksManifest() map[string]hook {
 	return map[string]hook{
