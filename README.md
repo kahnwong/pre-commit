@@ -17,7 +17,8 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: go-vet
       - id: golangci-lint
       # -- python -- #
-      - id: black
+      - id: ruff-check
+      - id: ruff-format
       # -- rust -- #
       - id: rust-fmt
       - id: cargo-check

@@ -43,10 +43,16 @@ func goHooksManifest() map[string]hook {
 
 func pythonHooksManifest() map[string]hook {
 	return map[string]hook{
-		"black": {
+		"ruff-check": {
 			Type:       "python",
-			Executable: "black",
-			Command:    "black \"$@\""},
+			Executable: "ruff",
+			Command:    "ruff check --fix",
+		},
+		"ruff-format": {
+			Type:       "python",
+			Executable: "ruff",
+			Command:    "ruff format",
+		},
 	}
 }
 

@@ -1,9 +1,3 @@
-- id: black
-  name: 'black'
-  entry: ./hooks/black.sh
-  types: [python]
-  files: ''
-  language: 'script'
 - id: cargo-check
   name: 'cargo check'
   entry: ./hooks/cargo-check.sh
@@ -69,6 +63,18 @@
   entry: ./hooks/nix-fmt.sh
   types: []
   files: '\.nix$'
+  language: 'script'
+- id: ruff-check
+  name: 'ruff check'
+  entry: ./hooks/ruff-check.sh
+  types: [python]
+  files: ''
+  language: 'script'
+- id: ruff-format
+  name: 'ruff format'
+  entry: ./hooks/ruff-format.sh
+  types: [python]
+  files: ''
   language: 'script'
 - id: rust-fmt
   name: 'rust fmt'
