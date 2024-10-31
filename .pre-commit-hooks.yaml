@@ -1,3 +1,9 @@
+- id: black
+  name: 'black'
+  entry: ./hooks/black.sh
+  types: [python]
+  files: ''
+  language: 'script'
 - id: cargo-check
   name: 'cargo check'
   entry: ./hooks/cargo-check.sh

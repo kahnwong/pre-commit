@@ -41,6 +41,15 @@ func goHooksManifest() map[string]hook {
 	}
 }
 
+func pythonHooksManifest() map[string]hook {
+	return map[string]hook{
+		"black": {
+			Type:       "python",
+			Executable: "black",
+			Command:    "black \"$@\""},
+	}
+}
+
 func rustHooksManifest() map[string]hook {
 	return map[string]hook{
 		"rust-fmt": {

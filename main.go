@@ -19,6 +19,7 @@ func main() {
 	hooks := map[string]hook{}
 	hooksManifest := []map[string]hook{
 		goHooksManifest(),
+		pythonHooksManifest(),
 		rustHooksManifest(),
 		terraformHooksManifest(),
 		opsHooksManifest(),
