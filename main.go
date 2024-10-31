@@ -41,7 +41,7 @@ func main() {
 }
 
 func generateHooksConfig(services map[string]hook) string {
-	config := "---\n"
+	config := ""
 	keys := make([]string, 0, len(services))
 	for k := range services {
 		keys = append(keys, k)

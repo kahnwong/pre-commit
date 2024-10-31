@@ -89,6 +89,11 @@ func terraformHooksManifest() map[string]hook {
 // misc
 func opsHooksManifest() map[string]hook {
 	return map[string]hook{
+		"yamlfmt": {
+			Files:      "(\\.yaml|\\.yml)$",
+			Executable: "yamlfmt",
+			Command:    "yamlfmt \"$@\"",
+		},
 		"hadolint": {
 			Type:       "dockerfile",
 			Executable: "hadolint",

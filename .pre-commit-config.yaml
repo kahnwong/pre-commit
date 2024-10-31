@@ -1,4 +1,3 @@
----
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -16,12 +15,13 @@ repos:
       - id: fix-byte-order-marker
       - id: mixed-line-ending
   # ----------------------- OPS -----------------------
-  - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-    rev: 0.2.3
+  - repo: local
     hooks:
       - id: yamlfmt
-        args: [--mapping, "2", --sequence, "4", --offset, "2", --width, "150", --preserve-quotes]
-        exclude: ^.pre-commit-hooks.yaml
+        name: yamlfmt
+        files: '(\.yaml|\.yml)$'
+        entry: yamlfmt .
+        language: system
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
     hooks:

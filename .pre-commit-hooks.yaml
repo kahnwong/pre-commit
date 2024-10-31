@@ -1,4 +1,3 @@
----
 - id: cargo-check
   name: 'cargo check'
   entry: ./hooks/cargo-check.sh
@@ -106,6 +105,12 @@
   entry: ./hooks/terraform-validate.sh
   types: []
   files: '\.(tf(vars)?|terraform\.lock\.hcl)$'
+  language: 'script'
+- id: yamlfmt
+  name: 'yamlfmt'
+  entry: ./hooks/yamlfmt.sh
+  types: []
+  files: '(\.yaml|\.yml)$'
   language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
