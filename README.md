@@ -27,6 +27,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: terraform-trivy
       # -- ops -- #
       - id: yamlfmt
+      - id: yamllint
       - id: hadolint
       - id: shellcheck
       - id: shfmt
