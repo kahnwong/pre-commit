@@ -83,6 +83,12 @@
   types: []
   files: '\.sh$'
   language: 'script'
+- id: terraform-docs
+  name: 'terraform docs'
+  entry: ./hooks/terraform-docs.sh
+  types: []
+  files: '(\.tf|\.terraform\.lock\.hcl)$'
+  language: 'script'
 - id: terraform-fmt
   name: 'terraform fmt'
   entry: ./hooks/terraform-fmt.sh
