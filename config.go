@@ -53,6 +53,11 @@ func pythonHooksManifest() map[string]hook {
 			Executable: "ruff",
 			Command:    "ruff format",
 		},
+		"uv-export": {
+			Files:      "^uv\\.lock$",
+			Executable: "uv",
+			Command:    "uv export --no-hashes --output-file=requirements.txt",
+		},
 	}
 }
 

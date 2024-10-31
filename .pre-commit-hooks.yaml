@@ -118,6 +118,12 @@
   types: []
   files: '\.(tf(vars)?|terraform\.lock\.hcl)$'
   language: 'script'
+- id: uv-export
+  name: 'uv export'
+  entry: ./hooks/uv-export.sh
+  types: []
+  files: '^uv\.lock$'
+  language: 'script'
 - id: yamlfmt
   name: 'yamlfmt'
   entry: ./hooks/yamlfmt.sh
