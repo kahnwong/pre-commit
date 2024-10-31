@@ -64,6 +64,12 @@
   types: [python]
   files: ''
   language: 'script'
+- id: nbstripout
+  name: 'nbstripout'
+  entry: ./hooks/nbstripout.sh
+  types: [python]
+  files: ''
+  language: 'script'
 - id: nix-fmt
   name: 'nix fmt'
   entry: ./hooks/nix-fmt.sh

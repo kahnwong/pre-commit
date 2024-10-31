@@ -63,6 +63,11 @@ func pythonHooksManifest() map[string]hook {
 			Executable: "uv",
 			Command:    "uv run mypy .",
 		},
+		"nbstripout": {
+			Type:       "python",
+			Executable: "nbstripout",
+			Command:    "nbstripout \"$@\"",
+		},
 	}
 }
 
