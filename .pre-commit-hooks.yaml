@@ -58,6 +58,12 @@
   types: [dockerfile]
   files: ''
   language: 'script'
+- id: markdownlint-cli2
+  name: 'markdownlint cli2'
+  entry: ./hooks/markdownlint-cli2.sh
+  types: [markdown]
+  files: ''
+  language: 'script'
 - id: mypy
   name: 'mypy'
   entry: ./hooks/mypy.sh

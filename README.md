@@ -40,6 +40,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       # -- misc -- #
       - id: nix-fmt
       - id: yarn-prettier
+      - id: markdownlint-cli2
 ```
 
 ## Refs

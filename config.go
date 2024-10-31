@@ -159,5 +159,10 @@ func miscHooksManifest() map[string]hook {
 			Executable: "nixfmt",
 			Command:    "nixfmt \"$@\"",
 		},
+		"markdownlint-cli2": {
+			Type:       "markdown",
+			Executable: "markdownlint-cli2",
+			Command:    "markdownlint-cli2 --ignores node_modules src --fix \"$@\"",
+		},
 	}
 }
