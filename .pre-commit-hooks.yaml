@@ -95,6 +95,12 @@
   types: []
   files: '(\.tf|\.tfvars)$'
   language: 'script'
+- id: terraform-trivy
+  name: 'terraform trivy'
+  entry: ./hooks/terraform-trivy.sh
+  types: []
+  files: '(\.tf|\.tfvars)$'
+  language: 'script'
 - id: terraform-validate
   name: 'terraform validate'
   entry: ./hooks/terraform-validate.sh

@@ -6,4 +6,4 @@ if ! command -v terraform-docs &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
-find . -name '*.tf' -not -path '*.terraform*' -printf '%h\n' | sort -u | xargs -L 1 bash -c 'terraform-docs "$0"'
+find . -name '*.tf' -not -path '*.terraform*' -printf '%h\n' | sort -u | xargs -L 1 bash -c 'output=`terraform-docs "$0" 2>&1` || echo -n "$output"'

@@ -24,6 +24,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: terraform-fmt
       - id: terraform-validate
       - id: terraform-docs
+      - id: terraform-trivy
       # -- ops -- #
       - id: hadolint
       - id: shellcheck
