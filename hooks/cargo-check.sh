@@ -5,4 +5,5 @@ if ! command -v cargo &>/dev/null; then
 	exit 1
 fi
 
+# shellcheck disable=SC2016
 cargo check

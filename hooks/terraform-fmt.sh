@@ -5,4 +5,5 @@ if ! command -v terraform &>/dev/null; then
 	exit 1
 fi
 
+# shellcheck disable=SC2016
 find . -name '*.tf' -not -path '*.terraform*' -printf '%h\n' | sort -u | xargs terraform fmt

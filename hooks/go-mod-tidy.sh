@@ -5,4 +5,5 @@ if ! command -v go &>/dev/null; then
 	exit 1
 fi
 
+# shellcheck disable=SC2016
 go mod tidy

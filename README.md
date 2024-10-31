@@ -22,6 +22,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: cargo-clippy
       # -- terraform -- #
       - id: terraform-fmt
+      - id: terraform-validate
       # -- ops -- #
       - id: hadolint
       - id: shellcheck

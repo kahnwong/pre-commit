@@ -68,6 +68,11 @@ func terraformHooksManifest() map[string]hook {
 			Executable: "terraform",
 			Command:    "find . -name '*.tf' -not -path '*.terraform*' -printf '%h\\n' | sort -u | xargs terraform fmt",
 		},
+		"terraform-validate": {
+			Files:      "\\.(tf(vars)?|terraform\\.lock\\.hcl)$",
+			Executable: "terraform",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' -printf '%h\\n' | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform validate 2>&1` || echo -n \"$output\"'",
+		},
 	}
 }
 

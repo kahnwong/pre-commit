@@ -89,6 +89,12 @@
   types: []
   files: '(\.tf|\.tfvars)$'
   language: 'script'
+- id: terraform-validate
+  name: 'terraform validate'
+  entry: ./hooks/terraform-validate.sh
+  types: []
+  files: '\.(tf(vars)?|terraform\.lock\.hcl)$'
+  language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh

@@ -5,4 +5,5 @@ if ! command -v yarn &>/dev/null; then
 	exit 1
 fi
 
+# shellcheck disable=SC2016
 yarn prettier . --write
