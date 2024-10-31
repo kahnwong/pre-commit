@@ -20,6 +20,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: ruff-check
       - id: ruff-format
       - id: uv-export
+      - id: mypy
       # -- rust -- #
       - id: rust-fmt
       - id: cargo-check

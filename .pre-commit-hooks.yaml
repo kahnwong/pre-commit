@@ -58,6 +58,12 @@
   types: [dockerfile]
   files: ''
   language: 'script'
+- id: mypy
+  name: 'mypy'
+  entry: ./hooks/mypy.sh
+  types: [python]
+  files: ''
+  language: 'script'
 - id: nix-fmt
   name: 'nix fmt'
   entry: ./hooks/nix-fmt.sh

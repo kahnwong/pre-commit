@@ -58,6 +58,11 @@ func pythonHooksManifest() map[string]hook {
 			Executable: "uv",
 			Command:    "uv export --no-hashes --output-file=requirements.txt",
 		},
+		"mypy": {
+			Type:       "python",
+			Executable: "uv",
+			Command:    "uv run mypy .",
+		},
 	}
 }
 
