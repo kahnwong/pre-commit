@@ -6,4 +6,5 @@ if ! command -v goimports &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 goimports -l -w "$@"

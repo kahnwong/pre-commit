@@ -6,4 +6,5 @@ if ! command -v markdownlint-cli2 &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 markdownlint-cli2 --ignores node_modules src --fix "$@"

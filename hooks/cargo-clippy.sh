@@ -6,4 +6,5 @@ if ! command -v cargo &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 cargo clippy -- -D warnings

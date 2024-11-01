@@ -6,4 +6,5 @@ if ! command -v terraform &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
-find . -name '*.tf' -not -path '*.terraform*' -printf '%h\n' | sort -u | xargs terraform fmt
+# shellcheck disable=SC2038
+find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs terraform fmt

@@ -6,4 +6,5 @@ if ! command -v ruff &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 ruff format

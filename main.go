@@ -66,6 +66,7 @@ if ! command -v %s &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 %s
 `, executable, executable, services[k].Command)
 		err := os.WriteFile(fmt.Sprintf("./hooks/%s.sh", k), []byte(hookScript), 0775)

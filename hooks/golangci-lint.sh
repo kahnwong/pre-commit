@@ -6,4 +6,5 @@ if ! command -v golangci-lint &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 golangci-lint run "$@"

@@ -6,4 +6,5 @@ if ! command -v gofmt &>/dev/null; then
 fi
 
 # shellcheck disable=SC2016
+# shellcheck disable=SC2038
 gofmt -l -w "$@"

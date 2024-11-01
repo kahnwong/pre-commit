@@ -96,17 +96,17 @@ func terraformHooksManifest() map[string]hook {
 		"terraform-fmt": {
 			Files:      "(\\.tf|\\.tfvars)$",
 			Executable: "terraform",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' -printf '%h\\n' | sort -u | xargs terraform fmt",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs terraform fmt",
 		},
 		"terraform-validate": {
 			Files:      "\\.(tf(vars)?|terraform\\.lock\\.hcl)$",
 			Executable: "terraform",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' -printf '%h\\n' | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform validate 2>&1` || echo -n \"$output\"'",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform validate 2>&1` || echo -n \"$output\"'",
 		},
 		"terraform-docs": {
 			Files:      "(\\.tf|\\.terraform\\.lock\\.hcl)$",
 			Executable: "terraform-docs",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' -printf '%h\\n' | sort -u | xargs -L 1 bash -c 'output=`terraform-docs \"$0\" 2>&1` || echo -n \"$output\"'",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'output=`terraform-docs \"$0\" 2>&1` || echo -n \"$output\"'",
 		},
 		"terraform-trivy": {
 			Files:      "(\\.tf|\\.tfvars)$",
