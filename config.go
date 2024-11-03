@@ -124,11 +124,11 @@ func opsHooksManifest() map[string]hook {
 			Executable: "yamlfmt",
 			Command:    "yamlfmt \"$@\"",
 		},
-		"yamllint": {
-			Files:      "(\\.yaml|\\.yml)$",
-			Executable: "yamllint",
-			Command:    "yamllint \"$@\"",
-		},
+		//"yamllint": {
+		//	Files:      "(\\.yaml|\\.yml)$",
+		//	Executable: "yamllint",
+		//	Command:    "yamllint \"$@\"",
+		//},
 		"hadolint": {
 			Type:       "dockerfile",
 			Executable: "hadolint",

@@ -148,12 +148,6 @@
   types: []
   files: '(\.yaml|\.yml)$'
   language: 'script'
-- id: yamllint
-  name: 'yamllint'
-  entry: ./hooks/yamllint.sh
-  types: []
-  files: '(\.yaml|\.yml)$'
-  language: 'script'
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh
