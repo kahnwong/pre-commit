@@ -16,12 +16,12 @@ func goHooksManifest() map[string]hook {
 		"go-vet": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go vet",
+			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && go vet'",
 		},
 		"golangci-lint": {
 			Type:       "go",
 			Executable: "golangci-lint",
-			Command:    "golangci-lint run \"$@\"",
+			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && golangci-lint run'",
 		},
 		"go-unit-tests": {
 			Type:       "go",

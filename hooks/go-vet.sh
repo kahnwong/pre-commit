@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-go vet
+find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd "$0" && go vet'
