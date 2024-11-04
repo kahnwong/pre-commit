@@ -106,7 +106,7 @@ func terraformHooksManifest() map[string]hook {
 		"terraform-docs": {
 			Files:      "(\\.tf|\\.terraform\\.lock\\.hcl)$",
 			Executable: "terraform-docs",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'output=`terraform-docs \"$0\" 2>&1` || echo -n \"$output\"'",
+			Command:    "terraform-docs .",
 		},
 		"terraform-trivy": {
 			Files:      "(\\.tf|\\.tfvars)$",
