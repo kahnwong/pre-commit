@@ -76,17 +76,17 @@ func rustHooksManifest() map[string]hook {
 		"rust-fmt": {
 			Type:       "rust",
 			Executable: "cargo",
-			Command:    "cargo fmt",
+			Command:    "find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && cargo fmt'",
 		},
 		"cargo-check": {
 			Type:       "rust",
 			Executable: "cargo",
-			Command:    "cargo check",
+			Command:    "find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && cargo check'",
 		},
 		"cargo-clippy": {
 			Type:       "rust",
 			Executable: "cargo",
-			Command:    "cargo clippy -- -D warnings",
+			Command:    "find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && cargo clippy -- -D warnings'",
 		},
 	}
 }
