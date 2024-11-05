@@ -140,7 +140,7 @@
   name: 'uv export'
   entry: ./hooks/uv-export.sh
   types: []
-  files: '^uv\.lock$'
+  files: 'uv\.lock$'
   language: 'script'
 - id: yamlfmt
   name: 'yamlfmt'

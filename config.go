@@ -54,9 +54,9 @@ func pythonHooksManifest() map[string]hook {
 			Command:    "ruff format",
 		},
 		"uv-export": {
-			Files:      "^uv\\.lock$",
+			Files:      "uv\\.lock$",
 			Executable: "uv",
-			Command:    "uv export --no-hashes --output-file=requirements.txt",
+			Command:    "find . -name 'uv.lock' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && uv export --no-hashes --output-file=requirements.txt'",
 		},
 		"mypy": {
 			Type:       "python",
