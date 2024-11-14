@@ -46,7 +46,7 @@ func pythonHooksManifest() map[string]hook {
 		"ruff-check": {
 			Type:       "python",
 			Executable: "ruff",
-			Command:    "ruff check --fix",
+			Command:    "ruff check --select I --fix",
 		},
 		"ruff-format": {
 			Type:       "python",
