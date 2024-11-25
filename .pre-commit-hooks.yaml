@@ -136,6 +136,12 @@
   types: []
   files: '\.(tf(vars)?|terraform\.lock\.hcl)$'
   language: 'script'
+- id: trufflehog
+  name: 'trufflehog'
+  entry: ./hooks/trufflehog.sh
+  types: []
+  files: '.*'
+  language: 'script'
 - id: uv-export
   name: 'uv export'
   entry: ./hooks/uv-export.sh

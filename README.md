@@ -36,6 +36,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: hadolint
       - id: shellcheck
       - id: shfmt
+      - id: trufflehog
       # -- misc -- #
       - id: nix-fmt
       - id: yarn-prettier

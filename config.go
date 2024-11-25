@@ -144,6 +144,11 @@ func opsHooksManifest() map[string]hook {
 			Executable: "shfmt",
 			Command:    "shfmt -w \"$@\"",
 		},
+		"trufflehog": {
+			Files:      ".*",
+			Executable: "trufflehog",
+			Command:    "trufflehog filesystem \"$@\" --no-update --fail",
+		},
 	}
 }
 
