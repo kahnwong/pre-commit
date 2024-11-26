@@ -112,6 +112,18 @@
   types: []
   files: '\.sh$'
   language: 'script'
+- id: sqruff-fix
+  name: 'sqruff fix'
+  entry: ./hooks/sqruff-fix.sh
+  types: [sql]
+  files: ''
+  language: 'script'
+- id: sqruff-lint
+  name: 'sqruff lint'
+  entry: ./hooks/sqruff-lint.sh
+  types: [sql]
+  files: ''
+  language: 'script'
 - id: terraform-docs
   name: 'terraform docs'
   entry: ./hooks/terraform-docs.sh

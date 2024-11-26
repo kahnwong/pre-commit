@@ -169,5 +169,15 @@ func miscHooksManifest() map[string]hook {
 			Executable: "markdownlint-cli2",
 			Command:    "markdownlint-cli2 --ignores node_modules src --fix \"$@\"",
 		},
+		"sqruff-lint": {
+			Type:       "sql",
+			Executable: "sqruff",
+			Command:    "sqruff lint \"$@\"",
+		},
+		"sqruff-fix": {
+			Type:       "sql",
+			Executable: "sqruff",
+			Command:    "sqruff fix --force \"$@\"",
+		},
 	}
 }
