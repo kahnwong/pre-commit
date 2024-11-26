@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-find . -name 'uv.lock' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd "$0" && uv export --no-hashes --output-file=requirements.txt'
+find . -name 'uv.lock' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd "$0" && uv export --no-hashes --no-dev --no-emit-project --output-file=requirements.txt'
