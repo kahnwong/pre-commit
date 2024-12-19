@@ -64,6 +64,12 @@
   types: [markdown]
   files: ''
   language: 'script'
+- id: mdsf
+  name: 'mdsf'
+  entry: ./hooks/mdsf.sh
+  types: [markdown]
+  files: ''
+  language: 'script'
 - id: mypy
   name: 'mypy'
   entry: ./hooks/mypy.sh
