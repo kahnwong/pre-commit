@@ -175,6 +175,6 @@
 - id: yarn-prettier
   name: 'yarn prettier'
   entry: ./hooks/yarn-prettier.sh
-  types: [ts]
-  files: ''
+  types: []
+  files: '\.([jt]sx?|vue)$'
   language: 'script'

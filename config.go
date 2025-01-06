@@ -155,9 +155,9 @@ func opsHooksManifest() map[string]hook {
 func miscHooksManifest() map[string]hook {
 	return map[string]hook{
 		"yarn-prettier": {
-			Type:       "ts",
+			Files:      "\\.([jt]sx?|vue)$",
 			Executable: "yarn",
-			Command:    "yarn prettier . --write",
+			Command:    "yarn prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
 		},
 		"nix-fmt": {
 			Files:      "\\.nix$",
