@@ -53,6 +53,11 @@ func pythonHooksManifest() map[string]hook {
 			Executable: "ruff",
 			Command:    "ruff format",
 		},
+		"uv-lock": {
+			Files:      "pyproject\\.toml",
+			Executable: "uv",
+			Command:    "find . -name 'pyproject.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && uv lock'",
+		},
 		"uv-export": {
 			Files:      "uv\\.lock$",
 			Executable: "uv",

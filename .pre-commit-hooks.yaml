@@ -166,6 +166,12 @@
   types: []
   files: 'uv\.lock$'
   language: 'script'
+- id: uv-lock
+  name: 'uv lock'
+  entry: ./hooks/uv-lock.sh
+  types: []
+  files: 'pyproject\.toml'
+  language: 'script'
 - id: yamlfmt
   name: 'yamlfmt'
   entry: ./hooks/yamlfmt.sh
