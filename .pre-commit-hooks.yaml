@@ -79,8 +79,8 @@
 - id: nbstripout
   name: 'nbstripout'
   entry: ./hooks/nbstripout.sh
-  types: [python]
-  files: ''
+  types: []
+  files: '\.ipynb'
   language: 'script'
 - id: nix-fmt
   name: 'nix fmt'

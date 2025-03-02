@@ -46,7 +46,7 @@ func pythonHooksManifest() map[string]hook {
 		"ruff-check": {
 			Type:       "python",
 			Executable: "ruff",
-			Command:    "ruff check --select I --fix",
+			Command:    "ruff check --select I,F --fix",
 		},
 		"ruff-format": {
 			Type:       "python",
@@ -69,7 +69,7 @@ func pythonHooksManifest() map[string]hook {
 			Command:    "uv run mypy .",
 		},
 		"nbstripout": {
-			Type:       "python",
+			Files:      "\\.ipynb",
 			Executable: "nbstripout",
 			Command:    "nbstripout \"$@\"",
 		},
