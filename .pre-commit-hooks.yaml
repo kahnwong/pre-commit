@@ -52,6 +52,12 @@
   types: [go]
   files: ''
   language: 'script'
+- id: graphql
+  name: 'graphql'
+  entry: ./hooks/graphql.sh
+  types: []
+  files: '\.graphql'
+  language: 'script'
 - id: hadolint
   name: 'hadolint'
   entry: ./hooks/hadolint.sh

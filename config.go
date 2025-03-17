@@ -164,6 +164,11 @@ func miscHooksManifest() map[string]hook {
 			Executable: "yarn",
 			Command:    "yarn prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
 		},
+		"graphql": {
+			Files:      "\\.graphql",
+			Executable: "prettier",
+			Command:    "prettier -w \"$@\"",
+		},
 		"nix-fmt": {
 			Files:      "\\.nix$",
 			Executable: "nixfmt",

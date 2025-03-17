@@ -40,6 +40,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: trufflehog
       # -- misc -- #
       - id: nix-fmt
+      - id: graphql
       - id: yarn-prettier
       - id: markdownlint-cli2
       - id: mdsf
