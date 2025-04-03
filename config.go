@@ -103,10 +103,20 @@ func terraformHooksManifest() map[string]hook {
 			Executable: "terraform",
 			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs terraform fmt",
 		},
+		"tofu-fmt": {
+			Files:      "(\\.tf|\\.tfvars)$",
+			Executable: "tofu",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs tofu fmt",
+		},
 		"terraform-validate": {
 			Files:      "\\.(tf(vars)?|terraform\\.lock\\.hcl)$",
 			Executable: "terraform",
 			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform validate 2>&1` || echo -n \"$output\"'",
+		},
+		"tofu-validate": {
+			Files:      "\\.(tf(vars)?|terraform\\.lock\\.hcl)$",
+			Executable: "tofu",
+			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`tofu validate 2>&1` || echo -n \"$output\"'",
 		},
 		"terraform-docs": {
 			Files:      "(\\.tf|\\.terraform\\.lock\\.hcl)$",

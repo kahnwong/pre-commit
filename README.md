@@ -30,6 +30,8 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       # -- terraform -- #
       - id: terraform-fmt
       - id: terraform-validate
+      - id: tofu-fmt
+      - id: tofu-validate
       - id: terraform-docs
       - id: terraform-trivy
       # -- ops -- #

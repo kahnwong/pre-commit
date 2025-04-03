@@ -160,6 +160,18 @@
   types: []
   files: '\.(tf(vars)?|terraform\.lock\.hcl)$'
   language: 'script'
+- id: tofu-fmt
+  name: 'tofu fmt'
+  entry: ./hooks/tofu-fmt.sh
+  types: []
+  files: '(\.tf|\.tfvars)$'
+  language: 'script'
+- id: tofu-validate
+  name: 'tofu validate'
+  entry: ./hooks/tofu-validate.sh
+  types: []
+  files: '\.(tf(vars)?|terraform\.lock\.hcl)$'
+  language: 'script'
 - id: trufflehog
   name: 'trufflehog'
   entry: ./hooks/trufflehog.sh
