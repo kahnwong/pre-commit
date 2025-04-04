@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-ruff check --select I,F --fix
+ruff check --extend-select I,F --fix
