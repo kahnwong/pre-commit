@@ -149,6 +149,11 @@ func opsHooksManifest() map[string]hook {
 			Executable: "hadolint",
 			Command:    "hadolint \"$@\"",
 		},
+		"kingfisher": {
+			Files:      ".*",
+			Executable: "kingfisher",
+			Command:    "kingfisher scan \"$@\"",
+		},
 		"shellcheck": {
 			Files:      "\\.sh$",
 			Executable: "shellcheck",

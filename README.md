@@ -37,6 +37,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       # -- ops -- #
       - id: yamlfmt
       - id: hadolint
+      - id: kingfisher
       - id: shellcheck
       - id: shfmt
       - id: trufflehog

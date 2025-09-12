@@ -64,6 +64,12 @@
   types: [dockerfile]
   files: ''
   language: 'script'
+- id: kingfisher
+  name: 'kingfisher'
+  entry: ./hooks/kingfisher.sh
+  types: []
+  files: '.*'
+  language: 'script'
 - id: markdownlint-cli2
   name: 'markdownlint cli2'
   entry: ./hooks/markdownlint-cli2.sh
