@@ -112,6 +112,12 @@
   types: [python]
   files: ''
   language: 'script'
+- id: rumdl
+  name: 'rumdl'
+  entry: ./hooks/rumdl.sh
+  types: [markdown]
+  files: ''
+  language: 'script'
 - id: rust-fmt
   name: 'rust fmt'
   entry: ./hooks/rust-fmt.sh

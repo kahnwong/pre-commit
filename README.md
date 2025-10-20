@@ -47,6 +47,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: yarn-prettier
       - id: markdownlint-cli2
       - id: mdsf
+      - id: rumdl
       - id: sqruff-lint
       - id: sqruff-fix
 ```
