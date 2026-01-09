@@ -190,6 +190,12 @@
   types: []
   files: '.*'
   language: 'script'
+- id: ty
+  name: 'ty'
+  entry: ./hooks/ty.sh
+  types: [python]
+  files: ''
+  language: 'script'
 - id: uv-export
   name: 'uv export'
   entry: ./hooks/uv-export.sh
