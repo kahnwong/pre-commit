@@ -196,6 +196,12 @@
   types: [python]
   files: ''
   language: 'script'
+- id: typos
+  name: 'typos'
+  entry: ./hooks/typos.sh
+  types: [markdown]
+  files: ''
+  language: 'script'
 - id: uv-export
   name: 'uv export'
   entry: ./hooks/uv-export.sh

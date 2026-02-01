@@ -49,6 +49,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: markdownlint-cli2
       - id: mdsf
       - id: rumdl
+      - id: typos
       - id: sqruff-lint
       - id: sqruff-fix
 ```

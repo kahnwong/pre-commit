@@ -209,6 +209,11 @@ func miscHooksManifest() map[string]hook {
 			Executable: "rumdl",
 			Command:    "rumdl fmt \"$@\"",
 		},
+		"typos": {
+			Type:       "markdown",
+			Executable: "typos",
+			Command:    "typos \"$@\"",
+		},
 		"sqruff-lint": {
 			Type:       "sql",
 			Executable: "sqruff",
