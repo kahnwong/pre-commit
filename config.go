@@ -21,7 +21,7 @@ func goHooksManifest() map[string]hook {
 		"golangci-lint": {
 			Type:       "go",
 			Executable: "golangci-lint",
-			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && golangci-lint run'",
+			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && golangci-lint run --fix'",
 		},
 		"go-unit-tests": {
 			Type:       "go",
