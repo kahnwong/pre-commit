@@ -10,6 +10,12 @@
   types: [rust]
   files: ''
   language: 'script'
+- id: checkov
+  name: 'checkov'
+  entry: ./hooks/checkov.sh
+  types: []
+  files: '(\.tf|\.tfvars)$'
+  language: 'script'
 - id: go-build
   name: 'go build'
   entry: ./hooks/go-build.sh

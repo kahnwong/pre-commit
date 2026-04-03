@@ -133,6 +133,11 @@ func terraformHooksManifest() map[string]hook {
 			Executable: "trivy",
 			Command:    "trivy config --tf-exclude-downloaded-modules --exit-code 1 .",
 		},
+		"checkov": {
+			Files:      "(\\.tf|\\.tfvars)$",
+			Executable: "checkov",
+			Command:    "checkov -f \"$@\" --quiet",
+		},
 	}
 }
 
