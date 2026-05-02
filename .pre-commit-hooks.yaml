@@ -16,6 +16,12 @@
   types: []
   files: '(\.tf|\.tfvars)$'
   language: 'script'
+- id: deadnix
+  name: 'deadnix'
+  entry: ./hooks/deadnix.sh
+  types: []
+  files: '\.nix$'
+  language: 'script'
 - id: go-build
   name: 'go build'
   entry: ./hooks/go-build.sh
@@ -153,6 +159,12 @@
   entry: ./hooks/sqruff-lint.sh
   types: [sql]
   files: ''
+  language: 'script'
+- id: statix
+  name: 'statix'
+  entry: ./hooks/statix.sh
+  types: []
+  files: '\.nix$'
   language: 'script'
 - id: terraform-docs
   name: 'terraform docs'

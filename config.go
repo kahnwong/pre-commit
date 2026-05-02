@@ -199,6 +199,16 @@ func miscHooksManifest() map[string]hook {
 			Executable: "nixfmt",
 			Command:    "nixfmt \"$@\"",
 		},
+		"statix": {
+			Files:      "\\.nix$",
+			Executable: "statix",
+			Command:    "statix check .",
+		},
+		"deadnix": {
+			Files:      "\\.nix$",
+			Executable: "deadnix",
+			Command:    "deadnix -eq \"$@\"",
+		},
 		"markdownlint-cli2": {
 			Type:       "markdown",
 			Executable: "markdownlint-cli2",
