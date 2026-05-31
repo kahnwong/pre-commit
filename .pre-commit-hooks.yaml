@@ -226,9 +226,3 @@
   types: []
   files: '(\.yaml|\.yml)$'
   language: 'script'
-- id: yarn-prettier
-  name: 'yarn prettier'
-  entry: ./hooks/yarn-prettier.sh
-  types: []
-  files: '\.([jt]sx?|vue)$'
-  language: 'script'

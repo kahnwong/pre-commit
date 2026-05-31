@@ -174,11 +174,6 @@ func opsHooksManifest() map[string]hook {
 
 func miscHooksManifest() map[string]hook {
 	return map[string]hook{
-		"yarn-prettier": {
-			Files:      "\\.([jt]sx?|vue)$",
-			Executable: "yarn",
-			Command:    "yarn prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
-		},
 		"graphql": {
 			Files:      "\\.graphql",
 			Executable: "prettier",
