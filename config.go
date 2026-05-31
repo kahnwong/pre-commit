@@ -123,11 +123,6 @@ func terraformHooksManifest() map[string]hook {
 			Executable: "terraform-docs",
 			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform-docs markdown table --html=false --anchor=false --output-file README.md --output-mode inject . 2>&1` || echo -n \"$output\"'",
 		},
-		"terraform-trivy": {
-			Files:      "(\\.tf|\\.tfvars)$",
-			Executable: "trivy",
-			Command:    "trivy config --tf-exclude-downloaded-modules --exit-code 1 .",
-		},
 		"checkov": {
 			Files:      "(\\.tf|\\.tfvars)$",
 			Executable: "checkov",

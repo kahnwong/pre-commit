@@ -33,7 +33,6 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: tofu-fmt
       - id: tofu-validate
       - id: terraform-docs
-      - id: terraform-trivy
       - id: checkov
       # -- ops -- #
       - id: yamlfmt
