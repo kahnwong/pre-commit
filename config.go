@@ -174,11 +174,6 @@ func opsHooksManifest() map[string]hook {
 
 func miscHooksManifest() map[string]hook {
 	return map[string]hook{
-		"graphql": {
-			Files:      "\\.graphql",
-			Executable: "prettier",
-			Command:    "prettier -w \"$@\"",
-		},
 		"nix-fmt": {
 			Files:      "\\.nix$",
 			Executable: "nixfmt",
