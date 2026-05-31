@@ -94,12 +94,6 @@
   types: [markdown]
   files: ''
   language: 'script'
-- id: mypy
-  name: 'mypy'
-  entry: ./hooks/mypy.sh
-  types: [python]
-  files: ''
-  language: 'script'
 - id: nbstripout
   name: 'nbstripout'
   entry: ./hooks/nbstripout.sh

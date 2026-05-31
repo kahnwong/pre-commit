@@ -63,11 +63,6 @@ func pythonHooksManifest() map[string]hook {
 			Executable: "uv",
 			Command:    "find . -name 'uv.lock' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && uv export --no-hashes --no-dev --no-emit-project --output-file=requirements.txt'",
 		},
-		"mypy": {
-			Type:       "python",
-			Executable: "uv",
-			Command:    "uv run mypy .",
-		},
 		"ty": {
 			Type:       "python",
 			Executable: "uvx",

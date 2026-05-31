@@ -21,7 +21,6 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: ruff-format
       - id: uv-lock
       - id: uv-export
-      - id: mypy
       - id: ty
       - id: nbstripout
       # -- rust -- #
