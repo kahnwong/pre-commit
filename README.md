@@ -41,18 +41,21 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: shellcheck
       - id: shfmt
       - id: trufflehog
-      # -- misc -- #
+      # -- nix -- #
       - id: nix-fmt
       - id: statix
       - id: deadnix
-      - id: graphql
-      - id: yarn-prettier
+      # -- markdown -- #
       - id: markdownlint-cli2
       - id: mdsf
       - id: rumdl
-      - id: typos
+      # -- sql -- #
       - id: sqruff-lint
       - id: sqruff-fix
+      # -- misc -- #
+      - id: graphql
+      - id: yarn-prettier
+      - id: typos
 ```
 
 ## Refs
