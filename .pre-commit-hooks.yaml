@@ -100,6 +100,12 @@
   types: []
   files: '\.nix$'
   language: 'script'
+- id: oxfmt
+  name: 'oxfmt'
+  entry: ./hooks/oxfmt.sh
+  types: []
+  files: '\.(js|jsx|ts|tsx|vue|css|scss|html|json|yaml|yml|md|toml|graphql|gql)$'
+  language: 'script'
 - id: ruff-check
   name: 'ruff check'
   entry: ./hooks/ruff-check.sh

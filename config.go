@@ -234,5 +234,10 @@ func miscHooksManifest() map[string]hook {
 			Executable: "typos",
 			Command:    "typos \"$@\"",
 		},
+		"oxfmt": {
+			Files:      "\\.(js|jsx|ts|tsx|vue|css|scss|html|json|md|toml|graphql|gql)$",
+			Executable: "oxfmt",
+			Command:    "oxfmt \"$@\"",
+		},
 	}
 }

@@ -54,6 +54,7 @@ Since I use multiple languages (Bash, Go, Python, Rust, Terraform) it's not very
       - id: sqruff-fix
       # -- misc -- #
       - id: typos
+      - id: oxfmt
 ```
 
 ## Refs
