@@ -172,7 +172,7 @@ func opsHooksManifest() map[string]hook {
 	}
 }
 
-func miscHooksManifest() map[string]hook {
+func nixHooksManifest() map[string]hook {
 	return map[string]hook{
 		"nix-fmt": {
 			Files:      "\\.nix$",
@@ -189,6 +189,11 @@ func miscHooksManifest() map[string]hook {
 			Executable: "deadnix",
 			Command:    "deadnix -eq \"$@\"",
 		},
+	}
+}
+
+func markdownHooksManifest() map[string]hook {
+	return map[string]hook{
 		"markdownlint-cli2": {
 			Type:       "markdown",
 			Executable: "markdownlint-cli2",
@@ -204,11 +209,11 @@ func miscHooksManifest() map[string]hook {
 			Executable: "rumdl",
 			Command:    "rumdl fmt \"$@\"",
 		},
-		"typos": {
-			Type:       "markdown",
-			Executable: "typos",
-			Command:    "typos \"$@\"",
-		},
+	}
+}
+
+func sqlHooksManifest() map[string]hook {
+	return map[string]hook{
 		"sqruff-lint": {
 			Type:       "sql",
 			Executable: "sqruff",
@@ -218,6 +223,16 @@ func miscHooksManifest() map[string]hook {
 			Type:       "sql",
 			Executable: "sqruff",
 			Command:    "sqruff fix --force \"$@\"",
+		},
+	}
+}
+
+func miscHooksManifest() map[string]hook {
+	return map[string]hook{
+		"typos": {
+			Type:       "markdown",
+			Executable: "typos",
+			Command:    "typos \"$@\"",
 		},
 	}
 }

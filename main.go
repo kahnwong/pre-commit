@@ -23,6 +23,9 @@ func main() {
 		rustHooksManifest(),
 		terraformHooksManifest(),
 		opsHooksManifest(),
+		nixHooksManifest(),
+		markdownHooksManifest(),
+		sqlHooksManifest(),
 		miscHooksManifest(),
 	}
 	for _, i := range hooksManifest {
