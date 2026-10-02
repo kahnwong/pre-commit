@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd "$0" && output=`tofu validate 2>&1` || echo -n "$output"'
+bash "$(dirname -- "${BASH_SOURCE[0]}")/lib/run-in-changed-projects.sh" '*.tf' bash -c 'output=$(tofu validate 2>&1) || printf '"'"'%s'"'"' "$output"' -- "$@"
