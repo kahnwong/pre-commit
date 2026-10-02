@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd "$0" && cargo check'
+bash "$(dirname -- "${BASH_SOURCE[0]}")/lib/run-in-changed-projects.sh" 'Cargo.toml' bash -c 'cargo check' -- "$@"

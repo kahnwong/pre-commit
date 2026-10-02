@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-find . -name 'pyproject.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd "$0" && uv lock'
+bash "$(dirname -- "${BASH_SOURCE[0]}")/lib/run-in-changed-projects.sh" 'pyproject.toml' bash -c 'uv lock' -- "$@"

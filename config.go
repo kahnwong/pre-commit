@@ -16,27 +16,27 @@ func goHooksManifest() map[string]hook {
 		"go-vet": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && go vet'",
+			Command:    runInChangedProjects("go vet ./...", "go.mod"),
 		},
 		"golangci-lint": {
 			Type:       "go",
 			Executable: "golangci-lint",
-			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && golangci-lint run --fix'",
+			Command:    runInChangedProjects("golangci-lint run --fix", "go.mod"),
 		},
 		"go-unit-tests": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go test ./...",
+			Command:    runInChangedProjects("go test ./...", "go.mod"),
 		},
 		"go-build": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go build",
+			Command:    runInChangedProjects("go build", "go.mod"),
 		},
 		"go-mod-tidy": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go mod tidy",
+			Command:    runInChangedProjects("go mod tidy", "go.mod"),
 		},
 	}
 }
@@ -56,12 +56,12 @@ func pythonHooksManifest() map[string]hook {
 		"uv-lock": {
 			Files:      "pyproject\\.toml",
 			Executable: "uv",
-			Command:    "find . -name 'pyproject.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && uv lock'",
+			Command:    runInChangedProjects("uv lock", "pyproject.toml"),
 		},
 		"uv-export": {
 			Files:      "uv\\.lock$",
 			Executable: "uv",
-			Command:    "find . -name 'uv.lock' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && uv export --no-hashes --no-dev --no-emit-project --output-file=requirements.txt'",
+			Command:    runInChangedProjects("uv export --no-hashes --no-dev --no-emit-project --output-file=requirements.txt", "uv.lock"),
 		},
 		"ty": {
 			Type:       "python",
@@ -81,17 +81,17 @@ func rustHooksManifest() map[string]hook {
 		"rust-fmt": {
 			Type:       "rust",
 			Executable: "cargo",
-			Command:    "find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && cargo fmt'",
+			Command:    runInChangedProjects("cargo fmt", "Cargo.toml"),
 		},
 		"cargo-check": {
 			Type:       "rust",
 			Executable: "cargo",
-			Command:    "find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && cargo check'",
+			Command:    runInChangedProjects("cargo check", "Cargo.toml"),
 		},
 		"cargo-clippy": {
 			Type:       "rust",
 			Executable: "cargo",
-			Command:    "find . -name 'Cargo.toml' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && cargo clippy -- -D warnings'",
+			Command:    runInChangedProjects("cargo clippy -- -D warnings", "Cargo.toml"),
 		},
 	}
 }
@@ -101,27 +101,27 @@ func terraformHooksManifest() map[string]hook {
 		"terraform-fmt": {
 			Files:      "(\\.tf|\\.tfvars)$",
 			Executable: "terraform",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs terraform fmt",
+			Command:    runInChangedProjects("terraform fmt", "*.tf"),
 		},
 		"tofu-fmt": {
 			Files:      "(\\.tf|\\.tfvars)$",
 			Executable: "tofu",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs tofu fmt",
+			Command:    runInChangedProjects("tofu fmt", "*.tf"),
 		},
 		"terraform-validate": {
 			Files:      "\\.(tf(vars)?|terraform\\.lock\\.hcl)$",
 			Executable: "terraform",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform validate 2>&1` || echo -n \"$output\"'",
+			Command:    runInChangedProjects(`output=$(terraform validate 2>&1) || printf '%s' "$output"`, "*.tf"),
 		},
 		"tofu-validate": {
 			Files:      "\\.(tf(vars)?|terraform\\.lock\\.hcl)$",
 			Executable: "tofu",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`tofu validate 2>&1` || echo -n \"$output\"'",
+			Command:    runInChangedProjects(`output=$(tofu validate 2>&1) || printf '%s' "$output"`, "*.tf"),
 		},
 		"terraform-docs": {
 			Files:      "(\\.tf|\\.terraform\\.lock\\.hcl)$",
 			Executable: "terraform-docs",
-			Command:    "find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && output=`terraform-docs markdown table --html=false --anchor=false --output-file README.md --output-mode inject . 2>&1` || echo -n \"$output\"'",
+			Command:    runInChangedProjects(`output=$(terraform-docs markdown table --html=false --anchor=false --output-file README.md --output-mode inject . 2>&1) || printf '%s' "$output"`, "*.tf"),
 		},
 		"checkov": {
 			Files:      "(\\.tf|\\.tfvars)$",
@@ -235,9 +235,22 @@ func miscHooksManifest() map[string]hook {
 			Command:    "typos \"$@\"",
 		},
 		"oxfmt": {
-			Files:      "\\.(js|jsx|ts|tsx|vue|css|scss|html|json|md|toml|graphql|gql)$",
+			Files:      "\\.(js|jsx|ts|tsx|vue|css|scss|html|json|yaml|yml|md|toml|graphql|gql)$",
 			Executable: "oxfmt",
-			Command:    "oxfmt \"$@\"",
+			Command: `files=()
+for file in "$@"; do
+    if [[ "${file##*/}" == README.md ]]; then
+        for tf in "$(dirname -- "$file")"/*.tf; do
+            if [[ -f "$tf" ]]; then
+                continue 2
+            fi
+        done
+    fi
+    files+=("$file")
+done
+if [[ ${#files[@]} -gt 0 ]]; then
+    oxfmt "${files[@]}"
+fi`,
 		},
 	}
 }

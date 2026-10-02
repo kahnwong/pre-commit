@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-find . -name '*.tf' -not -path '*.terraform*' | xargs dirname | sort -u | xargs tofu fmt
+bash "$(dirname -- "${BASH_SOURCE[0]}")/lib/run-in-changed-projects.sh" '*.tf' bash -c 'tofu fmt' -- "$@"
