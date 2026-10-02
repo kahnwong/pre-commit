@@ -16,7 +16,7 @@ func goHooksManifest() map[string]hook {
 		"go-vet": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "find . -name 'go.mod' | xargs dirname | sort -u | xargs -L 1 bash -c 'cd \"$0\" && go vet'",
+			Command:    runInChangedProjects("go vet ./..."),
 		},
 		"golangci-lint": {
 			Type:       "go",
