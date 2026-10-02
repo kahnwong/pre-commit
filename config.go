@@ -16,12 +16,12 @@ func goHooksManifest() map[string]hook {
 		"go-vet": {
 			Type:       "go",
 			Executable: "go",
-			Command:    runInChangedProjects("go vet ./..."),
+			Command:    runInChangedProjects("go vet ./...", "go.mod"),
 		},
 		"golangci-lint": {
 			Type:       "go",
 			Executable: "golangci-lint",
-			Command:    runInChangedProjects("golangci-lint run --fix"),
+			Command:    runInChangedProjects("golangci-lint run --fix", "go.mod"),
 		},
 		"go-unit-tests": {
 			Type:       "go",
@@ -235,7 +235,7 @@ func miscHooksManifest() map[string]hook {
 			Command:    "typos \"$@\"",
 		},
 		"oxfmt": {
-			Files:      "\\.(js|jsx|ts|tsx|vue|css|scss|html|json|md|toml|graphql|gql)$",
+			Files:      "\\.(js|jsx|ts|tsx|vue|css|scss|html|json|yaml|yml|md|toml|graphql|gql)$",
 			Executable: "oxfmt",
 			Command:    "oxfmt \"$@\"",
 		},

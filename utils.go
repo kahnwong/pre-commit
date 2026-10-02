@@ -10,7 +10,7 @@ import (
 // runInChangedProjects wraps a trusted shell command. The optional project marker
 // defaults to go.mod and may be a filename glob, such as *.tf.
 func runInChangedProjects(command string, markers ...string) string {
-	marker := "go.mod"
+	var marker string
 	if len(markers) > 1 {
 		panic("runInChangedProjects accepts at most one project marker")
 	}
