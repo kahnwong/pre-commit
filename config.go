@@ -26,17 +26,17 @@ func goHooksManifest() map[string]hook {
 		"go-unit-tests": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go test ./...",
+			Command:    runInChangedProjects("go test ./...", "go.mod"),
 		},
 		"go-build": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go build",
+			Command:    runInChangedProjects("go build", "go.mod"),
 		},
 		"go-mod-tidy": {
 			Type:       "go",
 			Executable: "go",
-			Command:    "go mod tidy",
+			Command:    runInChangedProjects("go mod tidy", "go.mod"),
 		},
 	}
 }
@@ -237,7 +237,20 @@ func miscHooksManifest() map[string]hook {
 		"oxfmt": {
 			Files:      "\\.(js|jsx|ts|tsx|vue|css|scss|html|json|yaml|yml|md|toml|graphql|gql)$",
 			Executable: "oxfmt",
-			Command:    "oxfmt \"$@\"",
+			Command: `files=()
+for file in "$@"; do
+    if [[ "${file##*/}" == README.md ]]; then
+        for tf in "$(dirname -- "$file")"/*.tf; do
+            if [[ -f "$tf" ]]; then
+                continue 2
+            fi
+        done
+    fi
+    files+=("$file")
+done
+if [[ ${#files[@]} -gt 0 ]]; then
+    oxfmt "${files[@]}"
+fi`,
 		},
 	}
 }

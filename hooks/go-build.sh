@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-go build
+bash "$(dirname -- "${BASH_SOURCE[0]}")/lib/run-in-changed-projects.sh" 'go.mod' bash -c 'go build' -- "$@"
