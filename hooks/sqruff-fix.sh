@@ -7,4 +7,4 @@ fi
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2038
-sqruff fix --force "$@"
+sqruff fix "$@"

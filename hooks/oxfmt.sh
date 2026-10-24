@@ -9,15 +9,15 @@ fi
 # shellcheck disable=SC2038
 files=()
 for file in "$@"; do
-	if [[ "${file##*/}" == README.md ]]; then
-		for tf in "$(dirname -- "$file")"/*.tf; do
-			if [[ -f "$tf" ]]; then
-				continue 2
-			fi
-		done
-	fi
-	files+=("$file")
+    if [[ "${file##*/}" == README.md ]]; then
+        for tf in "$(dirname -- "$file")"/*.tf; do
+            if [[ -f "$tf" ]]; then
+                continue 2
+            fi
+        done
+    fi
+    files+=("$file")
 done
 if [[ ${#files[@]} -gt 0 ]]; then
-	oxfmt "${files[@]}"
+    oxfmt "${files[@]}"
 fi

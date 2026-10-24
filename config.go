@@ -222,7 +222,7 @@ func sqlHooksManifest() map[string]hook {
 		"sqruff-fix": {
 			Type:       "sql",
 			Executable: "sqruff",
-			Command:    "sqruff fix --force \"$@\"",
+			Command:    "sqruff fix \"$@\"",
 		},
 	}
 }
